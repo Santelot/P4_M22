@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M22</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select { font-size: 1em; padding: 5px; }
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step6Activity3 = document.querySelector('#activity-3 .step-6');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P4-M22</h1>
+    </div>
+    <div class="container">
+        <!-- Selector de tiempo de clase -->
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+        <!-- Aquí se insertarán las actividades dinámicamente -->
+        
+        <!-- Actividad 0 -->
+<div id="activity-0" class="activity" data-time="N/A">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar materiales y recursos necesarios para la pista de navegación autónoma.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Proyectar Diapositiva 1 "Lista de Materiales: ¡Preparando la Pista de Navegación Autónoma!" y verificar que estén disponibles los materiales:
+                    <ul>
+                        <li><strong>Cutebots</strong> con sensores de línea y baterías cargadas.</li>
+                        <li><strong>Computadoras</strong> o tabletas con software de programación instalado.</li>
+                        <li><strong>Plantillas</strong> de seguidor de líneas de Gnius Club con curvas y bifurcaciones.</li>
+                    </ul>
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No aplica
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club �?Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 2 "¡Bienvenidos Especialistas de Avanzada Track Robotics!" con el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! 🌟 ¡Bienvenidos al laboratorio de Avanzada Track Robotics! Hoy, como especialistas en navegación autónoma, vamos a programar nuestros Cutebots para que dominen recorridos con curvas y bifurcaciones. ¡Prepárense para desafíos que pondrán a prueba nuestra capacidad de adaptación, la toma de decisiones, la precisión y el trabajo en equipo! 🚀"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 3 "¿Cómo te sientes hoy, Especialista?" con poses temáticas de navegación y toma de decisiones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, díganme cómo se sienten hoy: <br><br>
+                    - <strong>Si están listos</strong> para navegar y superar cualquier obstáculo, activen el Modo Navegación, moviendo los brazos como si estuvieran guiando un robot a través de un recorrido complejo, y digan '¡Navegación activada!'. 📡 <br><br>
+                    - <strong>Si necesitan un poco más</strong> de concentración para planificar las rutas, pongan las manos en las sienes como si estuvieran tomando decisiones estratégicas. 🧐 <br><br>
+                    ¡Vamos a calibrar nuestras mentes y prepararnos para la acción!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 4 "Ritual de Agradecimiento: ¡Gracias por la Misión de Navegación Autónoma!" y guiar a los estudiantes en el ritual temático.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Juntamos nuestras manos y decimos: '¡Gracias por estar aquí, Genios especialistas! Hoy vamos a programar nuestros Cutebots para que sigan líneas con curvas, bifurcaciones, tomen decisiones inteligentes y trabajemos en equipo para mejorar nuestro código. ¡Será un día lleno de aprendizaje y colaboración para lograr la navegación autónoma perfecta! 🌟💡'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 5 "Objetivos de la Misión: ¡Desafíos de Navegación Autónoma!".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, Especialistas de Avanzada Track Robotics! Aquí están los objetivos de nuestra misión de hoy: <br><br>
+                    1. <strong>Programar el Cutebot</strong> para que siga una línea con curvas suaves. <br><br>
+                    2. <strong>Lograr que el Cutebot</strong> tome decisiones en bifurcaciones. <br><br>
+                    3. <strong>Trabajar y compartir en equipo</strong> para mejorar nuestro código de seguimiento de líneas en recorridos con curvas y bifurcaciones. <br><br>
+                    ¡Prepárense para dominar la navegación autónoma y la colaboración!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity" data-time="3">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Brain Vitamin �?Tiempo: 3 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Simulación de planificación de rutas con curvas y bifurcaciones.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 6 "¡Activación Cerebral: Navegación Autónoma!" Explicar que realizarán un ejercicio para simular la planificación de rutas con curvas y bifurcaciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de Avanzada Track Robotics, vamos a activar nuestros cerebros y cuerpos para dominar la navegación autónoma! Hoy haremos un ejercicio que simulará cómo planificamos rutas con curvas y bifurcaciones, tomando decisiones rápidas y adaptándonos a los cambios. ¡Prepárense para mover sus cuerpos y mentes con la precisión de un robot navegante!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 7 "¡Ejercicio de Navegación: Sigue la Ruta con Decisiones!" Mostrar instrucciones para el ejercicio.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Vamos a navegar con decisión, especialistas! Sigan mis instrucciones: <br><br>
+                    1. <strong>Imaginen</strong> una ruta con tramos rectos, curvas y bifurcaciones. <br><br>
+                    2. Cuando escuchen <strong>'Avanzar'</strong>, den un paso al frente. <br><br>
+                    3. Cuando escuchen <strong>'Curva'</strong>, hagan un giro suave hacia la izquierda o la derecha. <br><br>
+                    4. Cuando escuchen <strong>'Bifurcación'</strong>, elijan el camino a seguir dando un paso lateral hacia la izquierda o la derecha. <br><br>
+                    Repitan la secuencia, adaptándose a los cambios de ruta. <br><br>
+                    ¡Este ejercicio activará nuestra coordinación, toma de decisiones y capacidad de adaptación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 8 "¡Reflexión: La Ruta Autónoma en tu Mente!". Guiar una breve discusión sobre cómo el ejercicio se relaciona con la programación de Cutebots y la adaptación a los diferentes elementos de la pista.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Excelente trabajo, especialistas! Ahora reflexionen: <br><br>
+                    - ¿Cómo creen que este ejercicio mejora nuestra <span style='color: red; font-weight: bold;'>coordinación</span>, <span style='color: red; font-weight: bold;'>toma de decisiones</span>, <span style='color: red; font-weight: bold;'>adaptación</span> y <span style='color: red; font-weight: bold;'>planificación</span>? <br><br>
+                    - ¿Qué habilidades activamos al seguir la ruta y tomar decisiones en las bifurcaciones? <br><br>
+                    Recuerden, la planificación precisa, la toma de decisiones y la adaptación a los cambios son fundamentales para que nuestros Cutebots dominen la navegación autónoma. <br><br>
+                    ¡La práctica nos hará especialistas más hábiles y estrategas!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity" data-time="30">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge �?Tiempo: 30 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Programación y pruebas de navegación autónoma avanzada.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 9 "¡Comienza el Desafío: Navegación Autónoma Avanzada!". Explicar el objetivo general del reto y los niveles de dificultad.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de Avanzada Track Robotics, ha llegado el momento de poner a prueba sus habilidades en la navegación autónoma! 🚀 Hoy vamos a programar nuestros Cutebots para que dominen recorridos con curvas y bifurcaciones. Tendremos tres niveles de desafío: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>, cada uno con retos de programación diferentes. ¡Elijan su reto y que comience la acción!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 10 "Preparación para el Desafío: ¡Listos para la Ruta!". Guiar a los estudiantes para verificar y organizar los materiales antes de comenzar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Antes de iniciar la navegación autónoma, especialistas, revisen su equipo! <br><br>
+                    - <strong>Los Cutebots</strong> con sensores de línea y baterías cargadas. <br><br>
+                    - <strong>Sus computadoras</strong> o tabletas listas para programar. <br><br>
+                    - <strong>Plantillas</strong> de seguimiento de líneas con curvas y bifurcaciones del Gnius Club. <br><br>
+                    ¡Una buena preparación nos dará el impulso necesario para dominar la ruta!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 11 "Espacio de Pruebas: ¡Rutas Personalizadas!". Pedir a los equipos que coloquen las plantillas en su espacio de trabajo y las posicionen correctamente.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es hora de crear sus propias rutas de navegación! Coloquen las plantillas de seguimiento de líneas con curvas y bifurcaciones en sus espacios de trabajo. Asegúrense de que estén bien posicionadas para que los Cutebots puedan seguir las líneas sin problemas. ¡Dejen volar su creatividad para poner a prueba sus habilidades de programación en la navegación autónoma!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 2 minutos):</strong> Proyectar Diapositiva 12 "Desafíos de Navegación: ¡Curvas, Bifurcaciones y Decisiones!" y detallar los objetivos y condiciones de cada nivel.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, Especialistas! Aquí tienen los desafíos que pondrán a prueba sus habilidades: <br><br>
+                    <strong>Nivel Rookie:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para seguir una línea con curvas suaves. <br>
+                    <span style='color: red; font-weight: bold;'>Instrucciones:</span> Utiliza los dos sensores y ajusta la velocidad al detectar la curva. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir la línea con curvas. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Empieza por el seguimiento recto y ajusta la velocidad en las curvas. <br><br>
+
+                    <strong>Nivel Master:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para elegir un camino en una bifurcación. <br>
+                    <span style='color: red; font-weight: bold;'>Instrucciones:</span> Utiliza los sensores para detectar la bifurcación y elegir un camino. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir la línea hasta la bifurcación y elegir el camino indicado. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Utiliza bloques condicionales para la toma de decisiones. <br><br>
+
+                    <strong>Nivel Hacker:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para seguir un recorrido complejo y tomar decisiones en cada bifurcación. <br>
+                    <span style='color: red; font-weight: bold;'>Instrucciones:</span> Programa al Cutebot para seguir la línea con curvas, ángulos, rectas y bifurcaciones. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir el recorrido completo y tomar decisiones en cada bifurcación. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Planifica la ruta y crea condiciones para cada bifurcación."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (Tiempo: 20 minutos):</strong> Proyectar Diapositiva 13 "¡Manos a la Obra: A Programar la Navegación Autónoma!". Explicar que los equipos programarán sus Cutebots con el objetivo de dominar las rutas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, especialistas! 🚀 Ahora programen sus Cutebots para dominar las rutas de navegación autónoma con curvas y bifurcaciones. Recuerden que la lógica, la precisión, la adaptación y la toma de decisiones son sus mejores aliados. ¡Adelante, a conquistar cada recorrido!"
+                </td>
+            </tr>
+            <tr class="step-6">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (Tiempo: 5 minutos):</strong> Proyectar Diapositiva 14 "Pruebas y Ajustes: ¡Perfeccionando la Ruta Autónoma!". Supervisar mientras los equipos prueban sus programas y ajustan las acciones de sus Cutebots en la pista.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es hora de poner a prueba sus creaciones! 🧪 Observen cómo sus Cutebots responden a los desafíos de la ruta. Ajusten el código si es necesario para que el seguimiento, la toma de decisiones y la adaptación sean óptimos. ¡La perseverancia es la clave del éxito en la navegación autónoma!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (Tiempo: 3 minutos):</strong> Proyectar Diapositiva 15 "Demostración de Navegación: Compartiendo Rutas y Decisiones". Invitar a los equipos a mostrar su trabajo y reflexionar sobre sus estrategias y resultados en la pista de pruebas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es hora de compartir sus resultados! Presenten sus Cutebots en acción y expliquen qué estrategias usaron para superar los desafíos de la navegación autónoma. ¡Aprendamos unos de otros y celebremos nuestra creatividad y trabajo en equipo en la pista!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 8 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 16 "Revisión de Objetivos: ¡Ruta Autónoma Dominada!". Reflexionar con los estudiantes sobre lo aprendido y cómo lograron cumplir los objetivos planteados en la navegación autónoma.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Felicidades, Especialistas de Avanzada Track Robotics! 🌟 Hoy han dominado la navegación autónoma: <br><br>
+                    - Programaron el Cutebot para seguir una línea con curvas suaves. <br><br>
+                    - Lograron que el Cutebot tomara decisiones en bifurcaciones. <br><br>
+                    - Trabajaron en equipo para mejorar su código de seguimiento en la ruta. <br><br>
+                    ¡Han demostrado ser unos verdaderos expertos en la navegación autónoma!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity" data-time="7.5">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🤝 Actividad 4: Team Gnius �?Tiempo: 7.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Colaboración en equipo para optimizar la navegación autónoma.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 17 "Team Gnius: ¡Análisis de la Ruta en Equipo!" Explicar cómo los roles y la colaboración permitirán revisar y optimizar los programas en la ruta de navegación autónoma.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de Avanzada Track Robotics, es momento de unir fuerzas como un equipo de expertos en la programación y el trabajo colaborativo! 🤝 Usaremos el <strong>Team CANVAS</strong> para analizar cómo abordaron los desafíos de la ruta de navegación autónoma y cómo podemos mejorar nuestras estrategias y nuestro código en equipo. Cada equipo tendrá roles clave: el <span style='color: red; font-weight: bold;'>Líder</span> guiará la conversación, el <span style='color: red; font-weight: bold;'>Programador</span> ajustará los códigos y el <span style='color: red; font-weight: bold;'>Observador</span> analizará el desempeño. ¡Juntos lograremos la navegación autónoma perfecta!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar la Diapositiva 18 "Formación de Equipos: ¡Expertos en Código!". Los estudiantes tendrán 1 minuto para formar equipos de 3 y asignar roles: Líder, Programador y Observador.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 1 minuto para formar sus equipos de 3, especialistas! Recuerden: <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Líder</span> dirigirá la conversación y guiará el análisis del recorrido en la ruta. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Programador</span> ajustará el código basado en las ideas del equipo. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Observador</span> analizará el rendimiento del Cutebot en la ruta y las posibilidades de mejorar el código. <br><br>
+                    ¡Trabajemos juntos como un equipo de expertos en la programación y la mejora colaborativa!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 3 minutos):</strong> Proyectar la Diapositiva 19 "Team CANVAS: Estrategias para la Ruta Autónoma". Cada equipo debe: 1. Analizar el trabajo realizado. 2. Proponer mejoras según los roles asignados. 3. Diseñar un plan conjunto para optimizar el seguimiento del Cutebot en la ruta y mejorar el código en equipo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Usen el <strong>Team CANVAS</strong> para reflexionar sobre su trabajo en la ruta de navegación autónoma, especialistas. Pregúntense: <br><br>
+                    - ¿Qué hicimos bien al programar el seguimiento de líneas con curvas y bifurcaciones? <br><br>
+                    - ¿Qué podemos mejorar en la toma de decisiones y la adaptación a los cambios de dirección? <br><br>
+                    - ¿Cómo podemos trabajar juntos para que nuestro Cutebot tenga el mejor desempeño en la ruta y optimizar nuestro código de seguimiento? <br><br>
+                    ¡Compartan ideas y trabajen juntos para mejorar sus estrategias y el código en equipo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 3 minutos):</strong> Proyectar la Diapositiva 20 "¡Ajustes Finales: Optimizando la Ruta y el Código!". Los equipos trabajan en las siguientes tareas: Líder organiza, Programador ajusta códigos, Observador verifica el desempeño en la ruta y el impacto de las mejoras en el código.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es momento de aplicar las mejoras en sus Cutebots y en su código! <br><br>
+                    - <span style='color: red; font-weight: bold;'>Programadores:</span> ajusten los códigos basándose en las recomendaciones de su equipo. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Líderes:</span> asegúrense de que todos estén colaborando en la mejora del código. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Observadores:</span> verifiquen cómo sus Cutebots responden a la ruta y si han mejorado la eficiencia, la precisión y la calidad del código. <br><br>
+                    ¡Trabajen juntos para que la navegación sea más precisa y eficiente y para optimizar su código de seguimiento!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity" data-time="3.5">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab �?Tiempo: 3.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar la Diapositiva 21 "Revisión de Objetivos: ¡Ruta Autónoma Dominada y Código Mejorado!". Leer los objetivos planteados al inicio y reflexionar sobre lo aprendido y logrado en equipo en la navegación autónoma.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de Avanzada Track Robotics, es momento de celebrar sus logros como expertos en la navegación autónoma y la colaboración en la mejora del código! 🌟 Revisemos nuestros objetivos: <br><br>
+                    - ¿Programamos el Cutebot para seguir una línea con curvas suaves? <br><br>
+                    - ¿Logramos que el Cutebot tomara decisiones en bifurcaciones de manera eficiente? <br><br>
+                    - ¿Trabajamos y compartimos en equipo para mejorar nuestro código de seguimiento de líneas con curvas y bifurcaciones? <br><br>
+                    ¡Estoy muy orgulloso del trabajo que realizaron hoy y de su compromiso con la precisión, la eficiencia y la colaboración!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles especialistas en navegación autónoma. Cada equipo colaboró para que los Cutebots siguieran rutas con curvas, bifurcaciones y tomaran decisiones eficientemente. ¡Felicidades a todo el equipo por su dedicación y trabajo colaborativo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 2 minutos):</strong> Proyectar la Diapositiva 22 "¡A Organizar el Laboratorio: Próximas Misiones de Navegación!". Guiar a los estudiantes para recoger y organizar todos los materiales utilizados durante la misión en la pista de pruebas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como profesionales de la robótica y la programación, honremos nuestro espacio de trabajo. Cada equipo es responsable de recoger y organizar todos los materiales utilizados durante esta misión de navegación autónoma: <br><br>
+                    - <span style='color: red; font-weight: bold;'>Guarden</span> sus Cutebots y computadoras con cuidado. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Asegúrense</span> de que las plantillas de seguimiento de líneas con curvas y bifurcaciones estén guardadas en su lugar. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Limpien</span> sus áreas de trabajo y déjenlas listas para futuras exploraciones y el desarrollo de nuevo código. <br><br>
+                    ¡Recuerden que el orden es un reflejo de nuestro compromiso con la precisión, la excelencia y el trabajo colaborativo!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+    </div>
+</body>
+</html>
